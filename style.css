@@ -1,0 +1,1684 @@
+:root {
+  --primary-color: #1a73e8;
+  --secondary-color: #4285f4;
+  --success-color: #0f9d58;
+  --warning-color: #f4b400;
+  --danger-color: #db4437;
+  --light-color: #f8f9fa;
+  --dark-color: #202124;
+  --gray-color: #5f6368;
+}
+
+/* ===========================================
+   BASE STYLES
+   =========================================== */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  padding-top: 76px; /* Space for fixed navbar */
+}
+
+/* ===========================================
+   FIXED NAVBAR - CRITICAL FIXES
+   =========================================== */
+.navbar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100% !important;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: white !important;
+  text-decoration: none;
+}
+
+.navbar-brand:hover {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  padding: 8px 12px !important;
+  transition: all 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: white !important;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+}
+
+.navbar-nav .nav-link.active {
+  color: white !important;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+}
+
+/* ===========================================
+   DROPDOWN FIXES - MOST IMPORTANT
+   =========================================== */
+.navbar .dropdown-menu {
+  position: fixed !important;
+  z-index: 1060 !important;
+  transform: none !important;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 8px;
+  min-width: 220px;
+  max-width: 300px;
+}
+
+.navbar .dropdown-menu.show {
+  opacity: 1;
+  pointer-events: auto;
+  top: 70px !important;
+  right: 20px !important;
+  left: auto !important;
+  transform: translateY(0) !important;
+}
+
+/* User Dropdown Button */
+.navbar #userDropdown {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.navbar #userDropdown:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  padding: 8px 16px;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  transform: translateX(2px);
+}
+
+.dropdown-item i {
+  width: 16px;
+  text-align: center;
+}
+
+.dropdown-item-text {
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  margin: -4px -12px 8px -12px;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Dashboard Themes untuk berbagai role */
+
+/* ===========================================
+   ADMIN THEME - BIRU PASTEL
+   =========================================== */
+.admin-theme {
+  --primary-color: #87ceeb;
+  --secondary-color: #b0e0e6;
+  --accent-color: #4682b4;
+  --bg-gradient: linear-gradient(135deg, #e6f3ff, #b3d9ff);
+  --card-bg: rgba(176, 224, 230, 0.1);
+  --border-color: #87ceeb;
+}
+
+.admin-theme .navbar {
+  background: linear-gradient(135deg, #87ceeb, #4682b4) !important;
+}
+
+.admin-theme .card-header.bg-primary {
+  background: linear-gradient(135deg, #87ceeb, #4682b4) !important;
+}
+
+.admin-theme .btn-primary {
+  background: linear-gradient(135deg, #87ceeb, #4682b4);
+  border-color: #4682b4;
+}
+
+.admin-theme .sidebar-admin {
+  background: var(--bg-gradient);
+  border: 1px solid var(--border-color);
+}
+
+.admin-theme .list-group-item {
+  background: linear-gradient(135deg, #87ceeb, #4682b4);
+  border-color: #4682b4;
+}
+
+.admin-theme .list-group-item.active {
+  background: linear-gradient(135deg, #76aedb, #87ceeb);
+  border-color: #87ceeb;
+}
+
+/* ===========================================
+   CS THEME - MAGENTA PASTEL
+   =========================================== */
+.cs-theme {
+  --primary-color: #dda0dd;
+  --secondary-color: #e6b8e6;
+  --accent-color: #ba55d3;
+  --bg-gradient: linear-gradient(135deg, #f5e6ff, #e6b8e6);
+  --card-bg: rgba(221, 160, 221, 0.1);
+  --border-color: #dda0dd;
+}
+
+.cs-theme .navbar {
+  background: linear-gradient(135deg, #dda0dd, #ba55d3) !important;
+}
+
+
+.cs-theme .card-header.bg-primary {
+  background: linear-gradient(135deg, #dda0dd, #ba55d3) !important;
+}
+
+.cs-theme .btn-primary {
+  background: linear-gradient(135deg, #dda0dd, #ba55d3);
+  border-color: #ba55d3;
+}
+
+.cs-theme .sidebar-cs {
+  background: var(--bg-gradient);
+  border: 1px solid var(--border-color);
+}
+
+/* ===========================================
+   KABAG KEUANGAN THEME - MERAH PASTEL
+   =========================================== */
+.kabag-theme {
+  --primary-color: #f0a0a0;
+  --secondary-color: #f5b2b2;
+  --accent-color: #dc143c;
+  --bg-gradient: linear-gradient(135deg, #ffe6e6, #f5b2b2);
+  --card-bg: rgba(240, 160, 160, 0.1);
+  --border-color: #f0a0a0;
+}
+
+.kabag-theme .navbar {
+  background: linear-gradient(135deg, #f0a0a0, #dc143c) !important;
+}
+
+.kabag-theme .card-header.bg-primary {
+  background: linear-gradient(135deg, #f0a0a0, #dc143c) !important;
+}
+
+.kabag-theme .btn-primary {
+  background: linear-gradient(135deg, #f0a0a0, #dc143c);
+  border-color: #dc143c;
+}
+
+.kabag-theme .sidebar-kabag {
+  background: var(--bg-gradient);
+  border: 1px solid var(--border-color);
+}
+
+/* ===========================================
+   DOSEN THEME - ORANYE PASTEL
+   =========================================== */
+.dosen-theme {
+  --primary-color: #ffb347;
+  --secondary-color: #ffc47a;
+  --accent-color: #ff8c00;
+  --bg-gradient: linear-gradient(135deg, #fff2e6, #ffc47a);
+  --card-bg: rgba(255, 179, 71, 0.1);
+  --border-color: #ffb347;
+}
+
+.dosen-theme .navbar {
+  background: linear-gradient(135deg, #ffb347, #ff8c00) !important;
+}
+
+.dosen-theme .card-header.bg-primary {
+  background: linear-gradient(135deg, #ffb347, #ff8c00) !important;
+}
+
+.dosen-theme .btn-primary {
+  background: linear-gradient(135deg, #ffb347, #ff8c00);
+  border-color: #ff8c00;
+}
+
+.dosen-theme .sidebar-dosen {
+  background: var(--bg-gradient);
+  border: 1px solid var(--border-color);
+}
+
+/* ===========================================
+   SIDEBAR STYLES
+   =========================================== */
+.dashboard-sidebar {
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.dashboard-sidebar .list-group-item {
+  border: none;
+  background: transparent;
+  transition: all 0.3s ease;
+  margin: 2px 0;
+  border-radius: 8px;
+}
+
+.dashboard-sidebar .list-group-item:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(5px);
+}
+
+.dashboard-sidebar .list-group-item.active {
+  background: rgba(255, 255, 255, 0.4);
+  font-weight: 600;
+}
+
+/* ===========================================
+   DASHBOARD CARDS
+   =========================================== */
+.dashboard-card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* ===========================================
+   ADD-ON FACILITY STYLES
+   =========================================== */
+.addon-facility {
+  border: 2px dashed #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+}
+
+.addon-facility:hover {
+  border-color: var(--primary-color);
+  background: var(--card-bg);
+}
+
+.addon-facility.selected {
+  border-color: var(--accent-color);
+  background: var(--card-bg);
+  border-style: solid;
+}
+
+.facility-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.total-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  padding: 15px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  border: 2px solid var(--border-color);
+}
+
+/* ===========================================
+   SCHEDULE CHANGE FORM
+   =========================================== */
+.schedule-change-form {
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+}
+
+.old-schedule {
+  background: rgba(220, 53, 69, 0.1);
+  border: 1px solid #dc3545;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.new-schedule {
+  background: rgba(40, 167, 69, 0.1);
+  border: 1px solid #28a745;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+@media (max-width: 768px) {
+  .dashboard-sidebar {
+    margin-bottom: 15px;
+  }
+
+  .stat-card {
+    margin-bottom: 15px;
+  }
+
+  .addon-facility {
+    padding: 15px;
+  }
+
+  .schedule-change-form {
+    padding: 20px;
+    margin: 15px 0;
+  }
+}
+
+/* ===========================================
+   ANIMATION UTILITIES
+   =========================================== */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===========================================
+   NOTIFICATION STYLES
+   =========================================== */
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #dc3545;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.urgent-request {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(220, 53, 69, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+  }
+}
+
+/* ===========================================
+   QUICK SEARCH BAR
+   =========================================== */
+.navbar .form-control-sm {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 0.8rem;
+}
+
+.navbar .form-control-sm::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar .form-control-sm:focus {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  border-color: white;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+}
+
+.navbar .btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+}
+
+.navbar .btn-outline-light:hover {
+  background: white;
+  color: var(--primary-color);
+  border-color: white;
+}
+
+/* ===========================================
+   Z-INDEX MANAGEMENT
+   =========================================== */
+.modal {
+  z-index: 1055;
+}
+
+.modal-backdrop {
+  z-index: 1050;
+}
+
+.alert.fixed-top {
+  z-index: 1070;
+  top: 80px;
+}
+
+.floating-notification {
+  z-index: 1065 !important;
+  position: fixed !important;
+  top: 80px !important;
+  right: 20px !important;
+}
+
+.tooltip {
+  z-index: 1070;
+}
+
+.popover {
+  z-index: 1070;
+}
+
+/* ===========================================
+   RESPONSIVE NAVBAR
+   =========================================== */
+@media (max-width: 991.98px) {
+  body {
+    padding-top: 56px;
+  }
+
+  .navbar .dropdown-menu.show {
+    position: fixed !important;
+    top: 60px !important;
+    right: 15px !important;
+    left: auto !important;
+    max-width: calc(100vw - 30px);
+    transform: none !important;
+  }
+
+  .navbar-collapse {
+    background: rgba(26, 115, 232, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 0 0 8px 8px;
+    margin-top: 8px;
+    padding: 10px;
+  }
+
+  .alert.fixed-top {
+    top: 60px;
+    margin: 0 10px;
+    max-width: calc(100% - 20px);
+  }
+}
+
+@media (max-width: 575px) {
+  body {
+    padding-top: 60px;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar .dropdown-menu.show {
+    right: 10px !important;
+    max-width: calc(100vw - 20px);
+  }
+}
+
+/* ===========================================
+   MAIN CONTENT LAYOUT
+   =========================================== */
+.main-content,
+.container-fluid {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  max-width: 1400px; /* Batasi lebar maksimal */
+  margin: 0 auto; /* Center container */
+}
+
+/* Untuk desktop besar */
+@media (min-width: 1200px) {
+  .container-fluid {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+}
+
+/* ===========================================
+   CARD STYLES
+   =========================================== */
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  font-weight: 600;
+  border-bottom: none;
+}
+
+/* Dropdown Position Fixes */
+.dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    z-index: 1000 !important;
+    min-width: 160px;
+    margin: 0 !important;
+    transform: none !important;
+}
+
+/* Ensure dropdown stays close to button */
+.dropdown {
+    position: relative !important;
+}
+
+.dropdown-toggle::after {
+    margin-left: 0.5rem;
+}
+
+/* Fix for Bootstrap dropdown positioning issues */
+.dropdown-menu[data-bs-popper] {
+    top: 100% !important;
+    left: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* User dropdown specific fixes */
+.navbar .dropdown-menu {
+    right: 0 !important;
+    left: auto !important;
+    margin-top: 0 !important;
+    border-radius: 0.375rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Profile dropdown positioning */
+.dropdown-menu.dropdown-menu-end {
+    right: 0 !important;
+    left: auto !important;
+}
+
+/* Mobile responsive dropdown */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: absolute !important;
+        width: auto !important;
+        min-width: 200px !important;
+    }
+    
+    .navbar .dropdown-menu {
+        right: 0 !important;
+        left: auto !important;
+        margin-top: 0.125rem !important;
+    }
+}
+
+/* Additional fixes for specific dropdowns */
+.btn-group .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    margin-top: 0.125rem !important;
+}
+
+/* Ensure dropdown appears above other content */
+.dropdown-menu.show {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+/* Smooth dropdown animation */
+.dropdown-menu {
+    transition: all 0.15s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Fix for any positioning conflicts */
+.navbar-nav .dropdown-menu {
+    position: absolute !important;
+    top: calc(100% + 0.125rem) !important;
+    right: 0 !important;
+    left: auto !important;
+    margin: 0 !important;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 0.375rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* ===========================================
+   MINI CALENDAR STYLES
+   =========================================== */
+.mini-calendar-day {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 32px;
+  width: 32px;
+  font-weight: 500;
+}
+
+.mini-calendar-day:hover {
+  background-color: #e9ecef;
+}
+
+.mini-calendar-day.today {
+  background-color: #e8f0fe;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.mini-calendar-day.selected {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+}
+
+.mini-calendar-day.has-bookings {
+  position: relative;
+}
+
+.mini-calendar-day.has-bookings::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+
+.mini-calendar-day.holiday {
+  background-color: #ffebee;
+  color: var(--danger-color);
+}
+
+/* Weekend styling */
+.mini-calendar-day.weekend {
+  color: var(--danger-color) !important;
+}
+
+.mini-calendar-day.weekend.selected {
+  background-color: var(--primary-color);
+  color: white !important;
+}
+
+.mini-calendar-day.out-of-range.weekend {
+  color: var(--danger-color) !important;
+  opacity: 0.5;
+}
+
+.mini-calendar-day.out-of-range {
+  opacity: 0.5;
+  cursor: not-allowed;
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+.mini-calendar-day.out-of-range.today {
+  opacity: 0.7;
+  text-decoration: none;
+  color: var(--primary-color);
+  background-color: #e8f0fe;
+}
+
+/* Calendar headers */
+.table.mini-calendar thead th:nth-child(6), /* Sabtu */
+.table.mini-calendar thead th:nth-child(7) {
+  /* Minggu */
+  color: var(--danger-color) !important;
+}
+
+.table.month-calendar thead th:nth-child(1), /* Minggu di month view */
+.table.month-calendar thead th:nth-child(7) {
+  /* Sabtu di month view */
+  color: var(--danger-color) !important;
+}
+
+/* ===========================================
+   ADMIN DASHBOARD TABLE FIXES
+   =========================================== */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.admin-table {
+  width: 100%;
+  min-width: 1000px;
+  margin-bottom: 0;
+  background: white;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px 8px;
+  vertical-align: middle;
+  border: 1px solid #dee2e6;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.admin-table th {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  font-weight: 600;
+  color: #495057;
+  text-align: left;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Column specifications */
+.col-no {
+  width: 60px;
+  min-width: 60px;
+  max-width: 60px;
+  text-align: center;
+}
+
+.col-nama {
+  width: 250px;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.col-ruangan {
+  width: 120px;
+  min-width: 100px;
+  max-width: 150px;
+}
+
+.col-tanggal {
+  width: 160px;
+  min-width: 140px;
+  max-width: 180px;
+}
+
+.col-peminjam {
+  width: 200px;
+  min-width: 150px;
+  max-width: 250px;
+}
+
+.col-status {
+  width: 120px;
+  min-width: 100px;
+  max-width: 140px;
+  text-align: center;
+}
+
+.col-aksi {
+  width: 180px;
+  min-width: 160px;
+  max-width: 200px;
+  text-align: center;
+}
+
+/* ===========================================
+   CELL CONTENT STYLING
+   =========================================== */
+.data-cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+}
+
+.data-cell-multiline {
+  max-height: 60px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.nama-acara-cell {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.nama-acara-cell small {
+  color: #6c757d;
+  font-weight: 400;
+  display: block;
+  margin-top: 2px;
+}
+
+.tanggal-cell {
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.tanggal-cell .date {
+  font-weight: 600;
+  color: #495057;
+}
+
+.tanggal-cell .time {
+  color: #6c757d;
+  font-size: 0.8rem;
+}
+
+/* ===========================================
+   MODAL IMPROVEMENTS
+   =========================================== */
+.modal-lg {
+  max-width: 95%;
+  width: 900px;
+}
+
+.modal-content {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.modal-header {
+  border-bottom: 1px solid #dee2e6;
+  padding: 20px 25px;
+}
+
+.modal-body {
+  padding: 25px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+  padding: 15px 25px;
+}
+
+.info-card {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h6 {
+  color: #495057;
+  margin-bottom: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 8px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-weight: 500;
+  color: #6c757d;
+  min-width: 140px;
+  flex-shrink: 0;
+}
+
+.info-value {
+  color: #495057;
+  text-align: right;
+  flex-grow: 1;
+  word-break: break-word;
+}
+
+/* ===========================================
+   BUTTONS AND BADGES
+   =========================================== */
+.btn {
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #0b5cad;
+  border-color: #0b5cad;
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+
+.btn-danger:hover {
+  background-color: #c62828;
+  border-color: #c62828;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-action {
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  margin: 1px;
+  min-width: 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-action i {
+  font-size: 0.8rem;
+}
+
+.badge {
+  padding: 5px 8px;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+/* ===========================================
+   ACTIVE BOOKING STYLES
+   =========================================== */
+.active-booking {
+  background-color: #f8d7da !important;
+  border-left: 5px solid #dc3545 !important;
+  animation: activePulse 2s infinite;
+}
+
+.active-booking .booking-info {
+  border: 2px solid #dc3545;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #fff5f5, #ffe6e6);
+  padding: 12px;
+}
+
+@keyframes activePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.8);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(220, 53, 69, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+  }
+}
+
+.blink-badge {
+  animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.checkout-btn {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+  animation: checkoutGlow 2s infinite alternate;
+}
+
+.checkout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
+}
+
+@keyframes checkoutGlow {
+  0% {
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.6);
+  }
+}
+
+.active-booking::before {
+  content: '🔴';
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  animation: blink 1s infinite;
+}
+
+/* ===========================================
+   NEWLY AVAILABLE SLOTS
+   =========================================== */
+.newly-available {
+  background: linear-gradient(135deg, #d4edda, #c3e6cb) !important;
+  border-left: 5px solid #28a745 !important;
+  animation: newlyAvailablePulse 3s infinite;
+  position: relative;
+}
+
+.newly-available::before {
+  content: '🆕';
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  font-size: 14px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes newlyAvailablePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.8);
+    background-color: #d4edda;
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(40, 167, 69, 0);
+    background-color: #b3d7ba;
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+    background-color: #d4edda;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+.newly-available .book-btn {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  border: none;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+  animation: buttonGlow 2s infinite alternate;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes buttonGlow {
+  0% {
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+  }
+  100% {
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.8);
+  }
+}
+
+/* ===========================================
+   NOTIFICATION STYLES
+   =========================================== */
+.floating-notification {
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.floating-notification.alert-success {
+  background: linear-gradient(135deg, rgba(40, 167, 69, 0.95), rgba(32, 201, 151, 0.95));
+  color: white;
+  border-left: 5px solid #fff;
+}
+
+.floating-notification.alert-info {
+  background: linear-gradient(135deg, rgba(23, 162, 184, 0.95), rgba(108, 117, 125, 0.95));
+  color: white;
+  border-left: 5px solid #fff;
+}
+
+.alert-sm {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.success-notification {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  animation: successPulse 0.5s ease-out;
+}
+
+@keyframes successPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===========================================
+   FORM CONTROLS
+   =========================================== */
+.form-control,
+.form-select {
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(26, 115, 232, 0.25);
+}
+
+/* ===========================================
+   CALENDAR AND TIME SLOT STYLES
+   =========================================== */
+.time-slot {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.time-slot:hover {
+  background-color: #f8f9fa;
+}
+
+.time-slot td:first-child {
+  font-weight: 500;
+  color: var(--dark-color);
+}
+
+.booking-info {
+  padding: 8px;
+}
+
+.book-btn {
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.time-slot:hover .book-btn {
+  opacity: 1;
+}
+
+.available-slot {
+  transition: all 0.3s ease;
+}
+
+.available-slot:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ===========================================
+   ROOM STYLING
+   =========================================== */
+.room-badge {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.9rem;
+}
+
+.room-info-card .card-body {
+  padding: 1.25rem;
+}
+
+.room-info-card .icon-wrapper {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #f1f8ff;
+  margin-right: 15px;
+}
+
+.room-number-column {
+  font-weight: 500;
+}
+
+/* ===========================================
+   LOADING AND UTILITY STYLES
+   =========================================== */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border: 2px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-truncate-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================================
+   SCROLLBAR CUSTOMIZATION
+   =========================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+@media (min-width: 1200px) {
+  .admin-table {
+    min-width: 1200px;
+  }
+
+  .col-nama {
+    width: 300px;
+  }
+  .col-peminjam {
+    width: 250px;
+  }
+  .col-aksi {
+    width: 200px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .main-content-wrapper {
+    padding: 10px;
+  }
+
+  .admin-table {
+    min-width: 900px;
+    font-size: 0.85rem;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 8px 6px;
+  }
+
+  .btn-action {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-content-wrapper {
+    padding: 8px;
+  }
+
+  .admin-table {
+    min-width: 800px;
+    font-size: 0.8rem;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 6px 4px;
+  }
+
+  .col-nama {
+    width: 180px;
+  }
+  .col-peminjam {
+    width: 150px;
+  }
+  .col-aksi {
+    width: 140px;
+  }
+
+  .btn-action {
+    padding: 3px 6px;
+    font-size: 0.65rem;
+    min-width: 30px;
+  }
+
+  .modal-lg {
+    margin: 10px;
+    max-width: calc(100% - 20px);
+  }
+
+  .modal-body {
+    padding: 15px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .info-label {
+    min-width: auto;
+    font-size: 0.9rem;
+  }
+
+  .info-value {
+    text-align: left;
+    font-size: 0.9rem;
+  }
+
+  .mini-calendar-day {
+    height: 28px;
+    width: 28px;
+    font-size: 0.85rem;
+  }
+
+  .card-header h5 {
+    font-size: 1rem;
+  }
+
+  .card-body {
+    padding: 0.75rem;
+  }
+
+  .floating-notification {
+    right: 10px !important;
+    left: 10px !important;
+    max-width: none !important;
+  }
+
+  .newly-available .book-btn {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+
+  .checkout-btn {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 575px) {
+  .admin-table {
+    min-width: 700px;
+    font-size: 0.75rem;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 4px 3px;
+  }
+}
+
+/* ===========================================
+   FOOTER
+   =========================================== */
+footer {
+  background-color: var(--light-color);
+  color: var(--gray-color);
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  padding: 2rem 0;
+}
+
+/* ===========================================
+   FOCUS STYLES FOR ACCESSIBILITY
+   =========================================== */
+.nav-link:focus,
+.dropdown-toggle:focus,
+.btn:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* ===========================================
+   PRINT STYLES
+   =========================================== */
+@media print {
+  .btn,
+  .pagination,
+  .modal,
+  .navbar {
+    display: none !important;
+  }
+
+  body {
+    padding-top: 0 !important;
+  }
+
+  .table-responsive {
+    overflow: visible !important;
+  }
+
+  .admin-table {
+    min-width: auto !important;
+    font-size: 10pt;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 4px !important;
+    font-size: 9pt;
+  }
+}

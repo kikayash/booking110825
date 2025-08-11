@@ -1,0 +1,22 @@
+REVISI CS:
+1. TAMBAH BOOKING ADD-ON NYA KACAU
+2.DI MONITOR PEMINJAMAN RUANG, DATA TIDAK ADA YANG KELUAR
+
+CREATE TABLE IF NOT EXISTS tbl_booking_addons (
+    id_addon INT AUTO_INCREMENT PRIMARY KEY,
+    id_booking INT NOT NULL,
+    addon_key VARCHAR(50) NOT NULL,
+    addon_name VARCHAR(100) NOT NULL,
+    quantity INT NOT NULL DEFAULT 1,
+    unit_price DECIMAL(10,2) NOT NULL,
+    total_price DECIMAL(10,2) NOT NULL,
+    unit_type VARCHAR(20) DEFAULT 'unit',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_booking) REFERENCES tbl_booking(id_booking) ON DELETE CASCADE
+);
+
+-- Tambahkan kolom untuk CS tracking
+ALTER TABLE tbl_booking 
+ADD COLUMN created_by_cs TINYINT(1) DEFAULT 0,
+ADD COLUMN cs_user_id INT NULL,
+ADD COLUMN addon_total_cost DECIMAL(10,2) DEFAULT 0;
